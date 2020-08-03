@@ -5,8 +5,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import pobj.pinboard.document.Board;
 import pobj.pinboard.document.ClipEllipse;
+import pobj.pinboard.document.ClipRect;
 import pobj.pinboard.editor.EditorInterface;
-import pobj.pinboard.editor.commands.CommandAdd;
 
 public class ToolEllipse implements Tool {
 	double pressedX, pressedY, lastDragX, lastDragY;
@@ -40,7 +40,6 @@ public class ToolEllipse implements Tool {
 			ellipse = new ClipEllipse(Math.min(pressedX, releaseX), Math.min(pressedY,releaseY),
 					Math.max(pressedX, releaseX), Math.max(pressedY,releaseY), c);
 			b.addClip(ellipse);
-			i.getUndoStack().addCommand(new CommandAdd(i, ellipse));
 			ellipse = null;
 		}
 		holding = false;

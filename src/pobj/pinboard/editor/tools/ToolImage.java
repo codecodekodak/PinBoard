@@ -8,7 +8,6 @@ import pobj.pinboard.document.Board;
 import pobj.pinboard.document.Clip;
 import pobj.pinboard.document.ClipImage;
 import pobj.pinboard.editor.EditorInterface;
-import pobj.pinboard.editor.commands.CommandAdd;
 
 public class ToolImage implements Tool {
 	private File file;
@@ -42,7 +41,6 @@ public class ToolImage implements Tool {
 		b.removeClip(img);
 		img = new ClipImage(e.getX(), e.getY(), file);
 		b.addClip(img);
-		i.getUndoStack().addCommand(new CommandAdd(i, img));
 		img = null;
 		holding = false;
 	}

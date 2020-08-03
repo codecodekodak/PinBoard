@@ -4,7 +4,6 @@ import javafx.event.EventType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import pobj.pinboard.document.Board;
-import pobj.pinboard.editor.CommandStack;
 //import pobj.pinboard.editor.CommandStack;
 import pobj.pinboard.editor.EditorInterface;
 import pobj.pinboard.editor.Selection;
@@ -27,12 +26,6 @@ public class ToolTest {
 		//public CommandStack getUndoStack() { return stack; }
 
 		public Color getCurrentColor() { return Color.BLACK; }
-
-		@Override
-		public CommandStack getUndoStack() {
-			// TODO Auto-generated method stub
-			return null;
-		}
 	};
 	
 	MouseEvent makeMouseEvent(EventType<MouseEvent> eventType, double x, double y, boolean shift) {

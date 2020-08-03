@@ -12,28 +12,16 @@ public class CommandTest {
 
 	public class MockEditor implements EditorInterface {
 		private Board board = new Board();
+		public Board getBoard() { return board; }
 
-		public Board getBoard() {
-			return board;
-		}
+                private Selection selection = new Selection();
+		public Selection getSelection() { return selection; }
 
-		private Selection selection = new Selection();
+                // à décommenter quand CommandStack est définie et que getUndoStack est ajoutée à EditorInterface
+                //private CommandStack command = new CommandStack();
+		//public CommandStack getUndoStack() { return command; }
 
-		public Selection getSelection() {
-			return selection;
-		}
-
-		// à décommenter quand CommandStack est définie et que getUndoStack est ajoutée
-		// à EditorInterface
-		private CommandStack command = new CommandStack();
-
-		public CommandStack getUndoStack() {
-			return command;
-		}
-
-		public Color getCurrentColor() {
-			return Color.RED;
-		}
+                public Color getCurrentColor() { return Color.RED; }
 	};
-
+	
 }
